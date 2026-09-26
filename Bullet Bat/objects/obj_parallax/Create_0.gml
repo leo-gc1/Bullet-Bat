@@ -1,0 +1,1 @@
+parallax_spd = 1;
