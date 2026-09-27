@@ -1,13 +1,9 @@
-
+input(); //chama a função dos inputs, guardada em scr_controls
 
 function move() {
-	var _right = keyboard_check(ord("D"));
-	var _left = keyboard_check(ord("A"));
-	var _up = keyboard_check(ord("W"));
-	var _down = keyboard_check(ord("S"));
 	//calcula o movimento do player
-	hspd = (_right - _left) * spd;
-	vspd = (_down - _up) * spd;
+	hspd = (global._right - global._left) * spd;
+	vspd = (global._down - global._up) * spd;
 
 	//colisões
 	//horizontal
