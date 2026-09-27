@@ -1,4 +1,4 @@
 life --;
 hitted = true;
 
-other.set_random_position();
+instance_destroy(other);

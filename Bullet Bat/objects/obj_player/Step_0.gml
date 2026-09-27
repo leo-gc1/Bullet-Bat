@@ -57,9 +57,11 @@ function state_free() {
 
 function state_death() {
 	instance_destroy(obj_bullet); //destrói o projétil
-	obj_parallax.parallax_spd = 0; //zera a velocidade do background
-	
+	instance_destroy(obj_bullet_spawn);
+	 
 	y += 10; //o objeto cai para fora da room
+	if (y > room_height) instance_destroy(self); //destrói o objeto ao sair da room
+	
 	
 	if (sprite_index != spr_player_death) image_index = 0; //zera o index da animação caso imediatamente ocorreu a troca de estado
 	sprite_index = spr_player_death; //define a animação de morte
