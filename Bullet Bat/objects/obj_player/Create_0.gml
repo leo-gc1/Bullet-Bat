@@ -1,6 +1,6 @@
-hspd = 0;
-vspd = 0;
-spd = 5;
+hspd = 0; //velocidade horizontal
+vspd = 0; //velocidade vertical
+spd = 5; //velocidade geral
 
 
 
