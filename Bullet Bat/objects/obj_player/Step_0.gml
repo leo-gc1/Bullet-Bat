@@ -48,15 +48,26 @@ function state_free() {
 	x += hspd;
 	y += vspd;
 	
-	
+	//verifica se o player morre
+	if (life <= 0) {
+		life = 0;
+		state = "death";
+	}
 }
 
 function state_death() {
-	if (sprite_index != spr_player_death) {
-		image_index = 0;
-	}
-	sprite_index = spr_player_death;
+	instance_destroy(obj_bullet); //destrói o projétil
+	obj_parallax.parallax_spd = 0; //zera a velocidade do background
 	
+	y += 10; //o objeto cai para fora da room
+	
+	if (sprite_index != spr_player_death) image_index = 0; //zera o index da animação caso imediatamente ocorreu a troca de estado
+	sprite_index = spr_player_death; //define a animação de morte
+	
+	//finaliza a animação ao terminar
+	if (image_index >= image_number -1) {
+		image_index = image_number - 1;
+	}
 }
 
 switch (state) {
