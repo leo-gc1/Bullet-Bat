@@ -60,7 +60,10 @@ function state_death() {
 	instance_destroy(obj_bullet_spawn);
 	 
 	y += 10; //o objeto cai para fora da room
-	if (y > room_height) instance_destroy(self); //destrói o objeto ao sair da room
+	if (y > room_height) {
+		obj_hud.player_is_dead = true;
+		instance_destroy(self); //destrói o objeto ao sair da room
+	}
 	
 	
 	if (sprite_index != spr_player_death) image_index = 0; //zera o index da animação caso imediatamente ocorreu a troca de estado
