@@ -33,7 +33,6 @@
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"scr_controls","path":"scripts/scr_controls/scr_controls.yy",},},
-    {"id":{"name":"Script2","path":"scripts/Script2/Script2.yy",},},
     {"id":{"name":"spr_background_1","path":"sprites/spr_background_1/spr_background_1.yy",},},
     {"id":{"name":"spr_background_2","path":"sprites/spr_background_2/spr_background_2.yy",},},
     {"id":{"name":"spr_background_3","path":"sprites/spr_background_3/spr_background_3.yy",},},
