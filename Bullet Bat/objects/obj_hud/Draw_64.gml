@@ -11,8 +11,6 @@ if (player_is_dead) {
 }
 
 //menu de pause
-if (keyboard_check_pressed(vk_escape)) {
-	selected_option = draw_menu(death_menu_options);
+if (global.is_paused) {
+	//selected_option = draw_menu(death_menu_options);
 }
-
-//selected_option = draw_menu(death_menu_options);
