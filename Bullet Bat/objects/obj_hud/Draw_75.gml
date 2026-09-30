@@ -7,10 +7,12 @@ if (instance_exists(obj_player)) {
 
 //mostra o menu de morte se o player morrer
 if (player_is_dead) {
+	menu_state = "death";
 	selected_option = draw_menu(death_menu_options);
 }
 
 //menu de pause
 if (global.is_paused) {
-	//selected_option = draw_menu(death_menu_options);
+	menu_state = "pause";
+	selected_option = draw_menu(pause_menu_options);
 }

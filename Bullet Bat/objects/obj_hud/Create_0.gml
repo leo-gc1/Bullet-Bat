@@ -1,10 +1,21 @@
-//Opções do menu de morte:
+//opções do menu de morte:
 death_menu_options = ["Reiniciar", "Voltar ao menu inicial", "Sair do jogo"];
+//verifica se o player morreu
+player_is_dead = false;
+
+
+//opções do menu de pause
+pause_menu_options = [
+	"Continuar",
+	"Reiniciar",
+	"Voltar ao menu inicial",
+	"Sair do jogo"
+]
+
 //opção selecionada no menu
 selected_option = 0;
 
-player_is_dead = false;
-
+menu_state = "";
 
 //função usada para exibir o menu de pause e o menu de morte
 //retorna a opção selecionada
