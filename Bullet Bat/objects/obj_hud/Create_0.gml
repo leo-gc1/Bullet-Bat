@@ -12,8 +12,15 @@ pause_menu_options = [
 	"Sair do jogo"
 ]
 
+//opções do menu inicial
+start_menu_options = [
+	"Iniciar",
+	"Controles",
+	"Sair do jogo"
+]
+
 //opção selecionada no menu
-selected_option = 0;
+selected_option = -1;
 
 menu_state = "";
 

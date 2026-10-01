@@ -12,7 +12,12 @@ if (player_is_dead) {
 }
 
 //menu de pause
-if (global.is_paused) {
+if (global.is_paused && room == rm_game) {
 	menu_state = "pause";
 	selected_option = draw_menu(pause_menu_options);
+}
+
+if (room == rm_start_menu) {
+	menu_state = "start";
+	selected_option = draw_menu(start_menu_options);
 }

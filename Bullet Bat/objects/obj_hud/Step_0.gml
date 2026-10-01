@@ -5,10 +5,11 @@ function death_menu_actions(selected_option) {
 		switch (selected_option) {
 			case (0):
 				room_restart();
+				player_is_dead = false; //define que o player "reviveu"
 			break;
 		
 			case (1):
-				show_message("Voltar ao menu");
+				room_goto(rm_start_menu);
 			break;
 		
 			case (2):
@@ -29,11 +30,12 @@ function pause_menu_actions(selected_option) {
 			break;
 		
 			case (1):
+				obj_game.toggle_pause = true;
 				room_restart();
 			break;
 		
 			case (2):
-				show_message("Voltar ao menu inicial")
+				room_goto(rm_start_menu);
 			break;
 			
 			case (3):
@@ -43,6 +45,29 @@ function pause_menu_actions(selected_option) {
 		menu_state = "";
 	}
 }
+
+
+//define as ações do menu inicial
+function start_menu_actions(selected_option) {
+	//checando qual opção foi selecionada
+	if (mouse_check_button_pressed(mb_left)) {
+		switch (selected_option) {
+			case (0):
+				room_goto(rm_game);
+			break;
+		
+			case (1):
+				show_message("Mostra os controles")
+			break;
+		
+			case (2):
+				game_end();
+			break;
+		}
+		menu_state = "";
+	}
+}
+
 
 //escolhe a ação do menu que está sendo executado
 switch (menu_state) {
@@ -57,4 +82,10 @@ switch (menu_state) {
 	case "death":
 		death_menu_actions(selected_option);
 	break;
+	
+	case "start":
+		start_menu_actions(selected_option);
+	break;
 }
+
+//if (room == rm_start_menu && keyboard_check_pressed(vk_space)) room_goto_next();
