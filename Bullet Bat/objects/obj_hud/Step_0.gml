@@ -1,4 +1,4 @@
-
+//define as ações do menu de morte
 function death_menu_actions(selected_option) {
 	//checando qual opção foi selecionada
 	if (mouse_check_button_pressed(mb_left)) {
@@ -19,7 +19,7 @@ function death_menu_actions(selected_option) {
 	}
 }
 
-
+//define as ações do menu de pause
 function pause_menu_actions(selected_option) {
 	//checando qual opção foi selecionada
 	if (mouse_check_button_pressed(mb_left)) {
@@ -44,7 +44,7 @@ function pause_menu_actions(selected_option) {
 	}
 }
 
-
+//escolhe a ação do menu que está sendo executado
 switch (menu_state) {
 	case "":
 	
