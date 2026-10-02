@@ -1,6 +1,6 @@
 {
   "$GMFont":"",
-  "%Name":"Font1",
+  "%Name":"fnt_menu",
   "AntiAlias":1,
   "applyKerning":0,
   "ascender":14,
@@ -189,10 +189,10 @@
   "last":0,
   "lineHeight":18,
   "maintainGms1Font":false,
-  "name":"Font1",
+  "name":"fnt_menu",
   "parent":{
-    "name":"Bullet Bat",
-    "path":"Bullet Bat.yyp",
+    "name":"Fonts",
+    "path":"folders/Fonts.yy",
   },
   "pointRounding":0,
   "ranges":[

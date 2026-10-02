@@ -26,12 +26,12 @@ menu_state = "";
 
 //função usada para exibir o menu de pause e o menu de morte
 //retorna a opção selecionada
-function draw_menu(options_list) {
+function draw_menu(options_list, title_string) {
 	draw_set_colour(c_black);
 	draw_set_alpha(0.6);
 	
 	//ADICIONAR UMA FONTE MELHOR
-	
+
 	//Desenhando um retangulo transparente para escurecer a imagem
 	draw_rectangle(0, 0, display_get_gui_width(), display_get_gui_height(), 0);
 	
@@ -39,11 +39,16 @@ function draw_menu(options_list) {
 	draw_set_alpha(1);
 	//pegando a posição do centro da imagem
 	var _x = display_get_gui_width() / 2;
-	var _y = display_get_gui_height() / 2 - 50;
+	var _y = display_get_gui_height() / 2 - 30;
 	
 	//centraliza o texto horizontalmente e verticalmente
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
+	
+	//desenha o titulo
+	draw_set_colour(c_white);
+	draw_set_font(fnt_title);
+	draw_text(_x, _y - 220, title_string);
 	
 	//pega a posição do mouse de acordo com a gui
 	var _m_x = device_mouse_x_to_gui(0);
@@ -60,10 +65,6 @@ function draw_menu(options_list) {
 		//checa se o mouse está encima do texto
 		var _mouse_hover = point_in_rectangle(_m_x, _m_y, _x - string_w / 2, _y2 - string_h / 2, _x + string_w / 2, _y2 + string_h / 2);
 		
-
-		
-
-		
 		//define a cor do texto de acordo com a opção marcada
 		if (_mouse_hover) {
 			draw_set_colour(c_yellow);
@@ -73,13 +74,14 @@ function draw_menu(options_list) {
 			
 		}
 		
+		draw_set_font(fnt_menu);
 		draw_text(_x, _y2, options_list[i]);
 	}
 	
 	//resetando os parametros do draw
 	draw_set_alpha(1);
 	draw_set_colour(-1);
-	
+	draw_set_font(-1);
 
 	return _option_selected; //retorna a opção selecionada
 }
