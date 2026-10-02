@@ -55,10 +55,10 @@ function draw_menu(options_list, title_string) {
 	var _m_y = device_mouse_y_to_gui(0);
 	
 	var _op_max = array_length(options_list); //total de opções
-	var _option_selected = 0; //opção selecionada
+	var _option_selected = -1; //opção selecionada
 	
 	for (var i = 0; i < _op_max; i++) {
-		var _y2 = _y + (50 * i); //posição em que o texto será colocado
+		var _y2 = _y + (60 * i); //posição em que o texto será colocado
 		var string_w = string_width(options_list[i]); //tamanho do texto
 		var string_h = string_height(options_list[i]);
 		
@@ -71,17 +71,23 @@ function draw_menu(options_list, title_string) {
 			_option_selected = i; //marca qual opção foi selecionado e retorna ela posteriormente
 		} else {
 			draw_set_colour(c_white);	
-			
+			//_option_selected = -1;
 		}
 		
 		draw_set_font(fnt_menu);
 		draw_text(_x, _y2, options_list[i]);
+		
+
 	}
 	
 	//resetando os parametros do draw
 	draw_set_alpha(1);
 	draw_set_colour(-1);
 	draw_set_font(-1);
+	
 
-	return _option_selected; //retorna a opção selecionada
+	show_debug_message(_option_selected);
+	return _option_selected;
+
+	
 }
