@@ -85,8 +85,6 @@ function draw_menu(options_list, title_string) {
 	draw_set_colour(-1);
 	draw_set_font(-1);
 	
-
-	show_debug_message(_option_selected);
 	return _option_selected;
 
 	

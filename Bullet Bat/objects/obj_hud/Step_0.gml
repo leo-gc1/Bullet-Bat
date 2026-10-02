@@ -2,10 +2,10 @@
 function death_menu_actions(selected_option) {
 	//checando qual opção foi selecionada
 	if (mouse_check_button_pressed(mb_left)) {
+		player_is_dead = false; //define que o player "reviveu"
 		switch (selected_option) {
 			case (0):
 				room_restart();
-				player_is_dead = false; //define que o player "reviveu"
 			break;
 		
 			case (1):

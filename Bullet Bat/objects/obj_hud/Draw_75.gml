@@ -17,6 +17,7 @@ if (global.is_paused && room == rm_game) {
 	selected_option = draw_menu(pause_menu_options, "Jogo pausado");
 }
 
+//menu inicial
 if (room == rm_start_menu) {
 	menu_state = "start";
 	selected_option = draw_menu(start_menu_options, "Bullet Bat");
