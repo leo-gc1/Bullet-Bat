@@ -2,22 +2,26 @@
 function death_menu_actions(selected_option) {
 	//checando qual opção foi selecionada
 	if (mouse_check_button_pressed(mb_left)) {
-		player_is_dead = false; //define que o player "reviveu"
+		
 		switch (selected_option) {
 			case (0):
 				room_restart();
+				player_is_dead = false; //define que o player "reviveu"
 			break;
 		
 			case (1):
+				player_is_dead = false;
 				room_goto(rm_start_menu);
 			break;
 		
 			case (2):
+				player_is_dead = false;
 				game_end();
 			break;
 		}
 		menu_state = "";
 	}
+
 }
 
 //define as ações do menu de pause
