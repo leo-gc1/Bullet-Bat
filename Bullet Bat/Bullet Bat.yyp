@@ -30,6 +30,7 @@
   "name":"Bullet Bat",
   "resources":[
     {"id":{"name":"ac_position","path":"animcurves/ac_position/ac_position.yy",},},
+    {"id":{"name":"fnt_hud","path":"fonts/fnt_hud/fnt_hud.yy",},},
     {"id":{"name":"fnt_menu","path":"fonts/fnt_menu/fnt_menu.yy",},},
     {"id":{"name":"fnt_title","path":"fonts/fnt_title/fnt_title.yy",},},
     {"id":{"name":"obj_block","path":"objects/obj_block/obj_block.yy",},},

@@ -25,8 +25,7 @@ selected_option = -1;
 //define o menu que deve ser usado
 menu_state = "";
 
-
-scl = 1;
+player_life = 0 
 
 //função usada para exibir o menu de pause e o menu de morte
 //retorna a opção selecionada
@@ -89,8 +88,27 @@ function draw_menu(options_list, title_string) {
 	draw_set_alpha(1);
 	draw_set_colour(-1);
 	draw_set_font(-1);
+	draw_set_halign(-1);
+	draw_set_valign(-1);
 	
 	return _option_selected;
+}
+
+function draw_hud(life, font) {
+	//mostra a vida do player
+	draw_set_font(font);
+	draw_set_valign(fa_middle);
+	
+	draw_text(20, 40, "Vida: ");
+	
+	for (var i = 0; i < life; i++) {
+			draw_sprite(spr_heart, 0, 100 + (i * 30), 40);
+	}
+	
 
 	
+	
+	//reseta os parametros do draw
+	draw_set_font(-1);
+	draw_set_valign(-1);
 }

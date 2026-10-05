@@ -1,9 +1,6 @@
-//mostra a vida do player
-if (instance_exists(obj_player)) {
-	draw_text(10, 10, "Vida: ");
-	draw_text(60, 10, obj_player.life);
+if (!player_is_dead && room == rm_game) {	
+	draw_hud(obj_player.life, fnt_hud);
 }
-
 
 //mostra o menu de morte se o player morrer
 if (player_is_dead) {
