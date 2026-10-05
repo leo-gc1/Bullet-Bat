@@ -40,8 +40,8 @@
   ],
   "name":"rm_game",
   "parent":{
-    "name":"Bullet Bat",
-    "path":"Bullet Bat.yyp",
+    "name":"Rooms",
+    "path":"folders/Rooms.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

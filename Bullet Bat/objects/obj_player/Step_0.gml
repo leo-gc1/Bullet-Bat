@@ -11,13 +11,35 @@ function state_appearing() {
 
 function state_free() {
 	
+	if (sclx != 1 || scly != 1) {
+		sclx = lerp(sclx, 1, 0.4);
+		scly = lerp(scly, 1, 0.4);
+	}
+	
 	//se o player foi atingido, roda a animação de hit
-	if (!hitted) {
+	if (!hitted && !healthed) {
 		sprite_index = spr_player_free; //roda a animação
+	} else if (healthed) {
+		if (sprite_index != spr_player_hit) image_index = 0; //se o sprite acabou de mudar, zera o index da animação
+		sprite_index = spr_player_hit;
+		
+		//altera a escala de tamanho do player para aplicar um efeito de "stretch"
+		sclx = lerp(sclx, 0.6, 0.4);
+		scly = lerp(scly, 1.4, 0.4);
+		
+		//finaliza a animação no final dela
+		if (image_index >= image_number - 1) {
+			image_index = image_number - 1;
+			healthed = false;
+		}
 	} else {
 		if (sprite_index != spr_player_hit) image_index = 0; //se o sprite acabou de mudar, zera o index da animação
 		sprite_index = spr_player_hit;
 		
+		//altera a escala de tamanho do player para aplicar um efeito de "stretch"
+		sclx = lerp(sclx, 0.6, 0.4);
+		scly = lerp(scly, 1.4, 0.4)
+
 		//finaliza a animação no final dela
 		if (image_index >= image_number - 1) {
 			image_index = image_number - 1;
@@ -59,7 +81,7 @@ function state_death() {
 	instance_destroy(obj_bullet); //destrói o projétil
 	instance_destroy(obj_bullet_spawn);
 	 
-	y += 10; //o objeto cai para fora da room
+	y += 7; //o objeto cai para fora da room
 	if (y > room_height) {
 		obj_hud.player_is_dead = true;
 		instance_destroy(self); //destrói o objeto ao sair da room

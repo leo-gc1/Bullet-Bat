@@ -34,12 +34,14 @@ function pause_menu_actions(selected_option) {
 			break;
 		
 			case (1):
-				obj_game.toggle_pause = true;
 				room_restart();
+				obj_game.toggle_pause = true;
 			break;
 		
 			case (2):
+				//obj_game.toggle_pause = true;
 				room_goto(rm_start_menu);
+
 			break;
 			
 			case (3):

@@ -30,7 +30,7 @@ scl = 1;
 
 //função usada para exibir o menu de pause e o menu de morte
 //retorna a opção selecionada
-function draw_menu(options_list, title_string, scl) {
+function draw_menu(options_list, title_string) {
 	draw_set_colour(c_black);
 	draw_set_alpha(0.6);
 	

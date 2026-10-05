@@ -12,8 +12,8 @@
   "function":1,
   "name":"ac_position",
   "parent":{
-    "name":"Bullet Bat",
-    "path":"Bullet Bat.yyp",
+    "name":"Anim Curves",
+    "path":"folders/Anim Curves.yy",
   },
   "resourceType":"GMAnimCurve",
   "resourceVersion":"2.0",
