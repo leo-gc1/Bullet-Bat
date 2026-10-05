@@ -22,11 +22,15 @@ start_menu_options = [
 //opção selecionada no menu
 selected_option = -1;
 
+//define o menu que deve ser usado
 menu_state = "";
+
+
+scl = 1;
 
 //função usada para exibir o menu de pause e o menu de morte
 //retorna a opção selecionada
-function draw_menu(options_list, title_string) {
+function draw_menu(options_list, title_string, scl) {
 	draw_set_colour(c_black);
 	draw_set_alpha(0.6);
 	
@@ -68,10 +72,11 @@ function draw_menu(options_list, title_string) {
 		//define a cor do texto de acordo com a opção marcada
 		if (_mouse_hover) {
 			draw_set_colour(c_yellow);
+
 			_option_selected = i; //marca qual opção foi selecionado e retorna ela posteriormente
 		} else {
-			draw_set_colour(c_white);	
-			//_option_selected = -1;
+
+			draw_set_colour(c_white);
 		}
 		
 		draw_set_font(fnt_menu);
