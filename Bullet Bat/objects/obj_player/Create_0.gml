@@ -11,3 +11,5 @@ healthed = false;
 //escala de tamanho do player, efeito visual
 sclx = 1;
 scly = 1;
+
+global.game_start_time = current_time;

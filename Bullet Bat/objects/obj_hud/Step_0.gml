@@ -41,7 +41,7 @@ function pause_menu_actions(selected_option) {
 			case (2):
 				//obj_game.toggle_pause = true;
 				room_goto(rm_start_menu);
-
+				obj_game.toggle_pause = true;
 			break;
 			
 			case (3):
@@ -59,6 +59,7 @@ function start_menu_actions(selected_option) {
 	if (mouse_check_button_pressed(mb_left)) {
 		switch (selected_option) {
 			case (0):
+				//define quando o jogo começou
 				room_goto(rm_game);
 			break;
 		

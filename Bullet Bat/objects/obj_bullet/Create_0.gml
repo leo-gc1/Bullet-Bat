@@ -1,6 +1,6 @@
 
 
-spd = 15; //velocidade da bala
+spd = obj_bullet_spawn.bullet_spd; //velocidade da bala
 
 //reescala a imagem para aparecer mais na room
 image_xscale = 2; 

@@ -4,7 +4,9 @@ randomise();
 pos_x = room_width + 10; //posição x deve ser fora da room
 random_y = random_range(0 + 60,  room_height - 60); //posição y deve ser aleatória
 
+bullet_spd = 15;
 bullet = instance_create_layer(pos_x, random_y, "Instances", obj_bullet);
+
 
 //armazena se o player foi atingido
 player_hitted = false;

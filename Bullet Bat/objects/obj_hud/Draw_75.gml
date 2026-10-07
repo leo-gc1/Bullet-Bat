@@ -1,4 +1,6 @@
-if (!player_is_dead && room == rm_game) {	
+draw_text(120, 20, string(global.difficulty));
+
+if (!player_is_dead && room == rm_game && !global.is_paused) {	
 	draw_hud(obj_player.life, fnt_hud);
 }
 
