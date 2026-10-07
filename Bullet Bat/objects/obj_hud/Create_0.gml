@@ -80,7 +80,7 @@ start_menu_options = [
 	{
 		text: "Controles",
 		action: function() {
-			show_message("Mostra os controles");
+			room_goto(rm_controls);
 		}
 	},
 	
@@ -105,8 +105,6 @@ player_life = 0;
 function draw_menu(options_list, title_string) {
 	draw_set_colour(c_black);
 	draw_set_alpha(0.6);
-	
-	//ADICIONAR UMA FONTE MELHOR
 
 	//Desenhando um retangulo transparente para escurecer a imagem
 	draw_rectangle(0, 0, display_get_gui_width(), display_get_gui_height(), 0);

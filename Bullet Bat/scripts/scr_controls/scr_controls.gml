@@ -6,6 +6,6 @@ function input() {
 	global._down = keyboard_check(ord("S"));
 	
 	//controles do jogo
-	global._pause_key = keyboard_check_pressed(vk_escape);
+	global._pause_key = (keyboard_check_pressed(vk_escape) && room == rm_game);
 	
 }

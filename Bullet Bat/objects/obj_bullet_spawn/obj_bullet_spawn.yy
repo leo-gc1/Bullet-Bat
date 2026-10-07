@@ -9,8 +9,8 @@
   "name":"obj_bullet_spawn",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Config_objects",
+    "path":"folders/Objects/Config_objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

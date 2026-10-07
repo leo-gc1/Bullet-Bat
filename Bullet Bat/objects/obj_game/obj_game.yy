@@ -10,8 +10,8 @@
   "name":"obj_game",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Config_objects",
+    "path":"folders/Objects/Config_objects.yy",
   },
   "parentObjectId":null,
   "persistent":true,
