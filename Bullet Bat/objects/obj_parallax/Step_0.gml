@@ -28,7 +28,8 @@ if (!global.is_paused) {
 		if (!instance_exists(obj_player)) {
 			parallax_spd = lerp(parallax_spd, 0.1, 0.01); //se o player morreu, define a velocidade do paralax para 0.1
 		} else {
-			parallax_spd += 0.001; //aumenta gradualmente a velocidade do paralax
+			parallax_spd = (obj_bullet_spawn.bullet_spd / 10) * 1.015; //aumenta gradualmente a velocidade do paralax
+			show_debug_message(parallax_spd);
 		}
 	}
 	
