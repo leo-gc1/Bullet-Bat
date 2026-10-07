@@ -1,11 +1,11 @@
-draw_text(120, 20, string(global.difficulty));
+//draw_text(120, 20, string(global.difficulty));
 
-if (!player_is_dead && room == rm_game && !global.is_paused) {	
-	draw_hud(obj_player.life, fnt_hud);
+if (room == rm_game && !global.is_paused) {
+	draw_hud(player_life, fnt_hud);
 }
 
 //mostra o menu de morte se o player morrer
-if (player_is_dead) {
+if (player_is_dead && room == rm_game) {
 	menu_state = "death";
 	selected_option = draw_menu(death_menu_options, "Você morreu!");
 }

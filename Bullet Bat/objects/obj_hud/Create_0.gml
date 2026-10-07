@@ -1,22 +1,95 @@
-//opções do menu de morte:
-death_menu_options = ["Reiniciar", "Voltar ao menu inicial", "Sair do jogo"];
 //verifica se o player morreu
 player_is_dead = false;
+
+//opções do menu de morte:
+death_menu_options = [
+	{
+		text: "Reiniciar",
+		action: function() {
+			room_restart();
+		}
+	},
+	
+	{
+		text: "Voltar ao menu inicial",
+		action: function() {
+			room_goto(rm_start_menu);
+		}
+	},
+	
+	{
+		text: "Sair do jogo",
+		action: function() {
+			game_end();
+		}		
+	}
+];
+
 
 
 //opções do menu de pause
 pause_menu_options = [
-	"Continuar",
-	"Reiniciar",
-	"Voltar ao menu inicial",
-	"Sair do jogo"
+	//"Continuar",
+	//"Reiniciar",
+	//"Voltar ao menu inicial",
+	//"Sair do jogo"
+	{
+		text: "Continuar",
+		action: function() {
+			obj_game.toggle_pause = true;
+		}
+	},
+	
+	{
+		text: "Reiniciar",
+		action: function() {
+			room_restart();
+			obj_game.toggle_pause = true;
+		}
+	},
+	
+	{
+		text: "Voltar ao menu inicial",
+		action: function() {
+			room_goto(rm_start_menu);
+			obj_game.toggle_pause = true;
+		}
+	},
+	
+	{
+		text: "Sair do jogo",
+		action: function() {
+			game_end();
+		}
+	}
 ]
 
 //opções do menu inicial
 start_menu_options = [
-	"Iniciar",
-	"Controles",
-	"Sair do jogo"
+	//"Iniciar",
+	//"Controles",
+	//"Sair do jogo"
+	
+	{
+		text: "Iniciar",
+		action: function() {
+			room_goto(rm_game);
+		}
+	},
+	
+	{
+		text: "Controles",
+		action: function() {
+			show_message("Mostra os controles");
+		}
+	},
+	
+	{
+		text: "Sair do jogo",
+		action: function() {
+			game_end();
+		}
+	}
 ]
 
 //opção selecionada no menu
@@ -25,7 +98,7 @@ selected_option = -1;
 //define o menu que deve ser usado
 menu_state = "";
 
-player_life = 0 
+player_life = 0;
 
 //função usada para exibir o menu de pause e o menu de morte
 //retorna a opção selecionada
@@ -62,8 +135,8 @@ function draw_menu(options_list, title_string) {
 	
 	for (var i = 0; i < _op_max; i++) {
 		var _y2 = _y + (60 * i); //posição em que o texto será colocado
-		var string_w = string_width(options_list[i]); //tamanho do texto
-		var string_h = string_height(options_list[i]);
+		var string_w = string_width(options_list[i].text); //tamanho do texto
+		var string_h = string_height(options_list[i].text);
 		
 		//checa se o mouse está encima do texto
 		var _mouse_hover = point_in_rectangle(_m_x, _m_y, _x - string_w / 2, _y2 - string_h / 2, _x + string_w / 2, _y2 + string_h / 2);
@@ -79,7 +152,7 @@ function draw_menu(options_list, title_string) {
 		}
 		
 		draw_set_font(fnt_menu);
-		draw_text(_x, _y2, options_list[i]);
+		draw_text(_x, _y2, options_list[i].text);
 		
 
 	}

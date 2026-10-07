@@ -2,21 +2,18 @@
 function death_menu_actions(selected_option) {
 	//checando qual opção foi selecionada
 	if (mouse_check_button_pressed(mb_left)) {
-		
+		//player_is_dead = false;
 		switch (selected_option) {
 			case (0):
-				room_restart();
-				player_is_dead = false; //define que o player "reviveu"
+				death_menu_options[selected_option].action();
 			break;
 		
 			case (1):
-				player_is_dead = false;
-				room_goto(rm_start_menu);
+				death_menu_options[selected_option].action();
 			break;
 		
 			case (2):
-				player_is_dead = false;
-				game_end();
+				death_menu_options[selected_option].action();
 			break;
 		}
 		menu_state = "";
@@ -30,22 +27,19 @@ function pause_menu_actions(selected_option) {
 	if (mouse_check_button_pressed(mb_left)) {
 		switch (selected_option) {
 			case (0):
-				obj_game.toggle_pause = true;
+				pause_menu_options[selected_option].action();
 			break;
 		
 			case (1):
-				room_restart();
-				obj_game.toggle_pause = true;
+				pause_menu_options[selected_option].action();
 			break;
 		
 			case (2):
-				//obj_game.toggle_pause = true;
-				room_goto(rm_start_menu);
-				obj_game.toggle_pause = true;
+				pause_menu_options[selected_option].action();
 			break;
 			
 			case (3):
-				game_end();
+				pause_menu_options[selected_option].action();
 			break;
 		}
 		menu_state = "";
@@ -59,16 +53,15 @@ function start_menu_actions(selected_option) {
 	if (mouse_check_button_pressed(mb_left)) {
 		switch (selected_option) {
 			case (0):
-				//define quando o jogo começou
-				room_goto(rm_game);
+				start_menu_options[selected_option].action();
 			break;
 		
 			case (1):
-				show_message("Mostra os controles")
+				start_menu_options[selected_option].action();
 			break;
 		
 			case (2):
-				game_end();
+				start_menu_options[selected_option].action();
 			break;
 		}
 		menu_state = "";
