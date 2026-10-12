@@ -47,7 +47,9 @@ if (!global.is_paused) {
 	
 	var _score_rate = 1;
 	var _growth_rate = 0.1;
-	global.score += round(_score_rate * power(1 + _growth_rate, global.game_start_time /1000000));
+	if (room == rm_game) {
+		global.score += round(_score_rate * power(1 + _growth_rate, global.game_start_time /1000000));
+	}
 }
 
 

@@ -102,7 +102,7 @@ player_life = 0;
 
 //função usada para exibir o menu de pause e o menu de morte
 //retorna a opção selecionada
-function draw_menu(options_list, title_string) {
+function draw_menu(options_list, title_string, max_score, _score = 0) {
 	draw_set_colour(c_black);
 	draw_set_alpha(0.6);
 
@@ -123,6 +123,11 @@ function draw_menu(options_list, title_string) {
 	draw_set_colour(c_white);
 	draw_set_font(fnt_title);
 	draw_text(_x, _y - 220, title_string);
+	
+	draw_set_font(fnt_hud);
+	draw_text(_x, _y - 180, "Recorde: " + string(max_score));
+	if (_score != 0) draw_text(_x, _y - 160, "Pontuação: " + string(_score));
+
 	
 	//pega a posição do mouse de acordo com a gui
 	var _m_x = device_mouse_x_to_gui(0);

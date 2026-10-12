@@ -16,3 +16,4 @@ sclx = 1;
 scly = 1;
 
 global.game_start_time = current_time;
+global.score = 0;
