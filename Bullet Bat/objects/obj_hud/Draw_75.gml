@@ -6,6 +6,7 @@ if (room == rm_game && !global.is_paused) {
 
 //mostra o menu de morte se o player morrer
 if (player_is_dead && room == rm_game) {
+	scr_score_control();
 	menu_state = "death";
 	selected_option = draw_menu(death_menu_options, "Você morreu!", global.max_score, global.score);
 }
