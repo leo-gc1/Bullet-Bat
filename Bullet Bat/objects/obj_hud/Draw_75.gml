@@ -6,6 +6,8 @@ if (room == rm_game && !global.is_paused) {
 
 //mostra o menu de morte se o player morrer
 if (player_is_dead && room == rm_game) {
+	//salva o jogo
+	save();
 	scr_score_control();
 	menu_state = "death";
 	selected_option = draw_menu(death_menu_options, "Você morreu!", global.max_score, global.score);
@@ -13,6 +15,7 @@ if (player_is_dead && room == rm_game) {
 
 //menu de pause
 if (global.is_paused && room == rm_game) {
+	save();
 	scr_score_control();
 	menu_state = "pause";
 	selected_option = draw_menu(pause_menu_options, "Jogo pausado", global.max_score, global.score);

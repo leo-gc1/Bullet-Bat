@@ -125,8 +125,8 @@ function draw_menu(options_list, title_string, max_score, _score = 0) {
 	draw_text(_x, _y - 220, title_string);
 	
 	draw_set_font(fnt_hud);
-	draw_text(_x, _y - 180, "Recorde: " + string(max_score));
-	if (_score != 0) draw_text(_x, _y - 160, "Pontuação: " + string(_score));
+	draw_text(_x, _y - 140, "Recorde: " + string(max_score));
+	if (_score != 0) draw_text(_x, _y - 100, "Pontuação: " + string(_score));
 
 	
 	//pega a posição do mouse de acordo com a gui
