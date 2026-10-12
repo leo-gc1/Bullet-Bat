@@ -7,3 +7,5 @@ pause_time = 0; //variavel onde armazena o tempo em que o jogo fica pausado
 global.game_start_time = 0;
 global.difficulty = 0;
 
+global.score = 0;
+global.max_score = 0;

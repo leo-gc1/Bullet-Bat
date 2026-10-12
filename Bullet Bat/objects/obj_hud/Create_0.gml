@@ -176,7 +176,7 @@ function draw_hud(life, font) {
 			draw_sprite(spr_heart, 0, 100 + (i * 30), 40);
 	}
 	
-
+	draw_text(320, 40, "Pontuação: " + string(global.score));
 	
 	
 	//reseta os parametros do draw
